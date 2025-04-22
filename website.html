@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NutriPill - Nutrition Revolution</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #1b1b1b;
+      color: #eaeaea;
+    }
+    header {
+      background: #333333;
+      background-image: url('https://tse4.mm.bing.net/th?id=OIG2.o6nsjX.2smTp7wKffa13&pid=ImgGn');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      color: white;
+      padding: 70px 20px;
+      text-align: center;
+      animation: fadeIn 1s ease-out;
+    }
+    header h1 {
+      font-size: 3.5em;
+      margin: 0;
+      text-shadow: 3px 3px 8px rgba(0,0,0,0.5);
+    }
+    header p {
+      font-size: 1.5em;
+      margin-top: 15px;
+    }
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    h2 {
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+    img {
+      width: 260px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+    }
+    img:hover {
+      transform: scale(1.1);
+    }
+    .pill-images {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .pill-images div {
+      max-width: 260px;
+      text-align: center;
+    }
+    .pill-images p {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #ccc;
+    }
+    footer {
+      background-color: #333333;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+    .buy-button, .cart-button {
+      background-color: #555555;
+      color: white;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 10px;
+      transition: 0.3s;
+    }
+    .buy-button:hover, .cart-button:hover {
+      background-color: #777777;
+    }
+    .cart-section {
+      background: #222222;
+      max-width: 400px;
+      margin: 40px auto;
+      border-radius: 25px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.5);
+      padding: 30px;
+    }
+    .cart-items {
+      text-align: left;
+      margin-top: 20px;
+      font-size: 15px;
+    }
+    .category-section {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      text-align: left;
+    }
+    .category {
+      background: #2a2a2a;
+      padding: 30px;
+      border-radius: 25px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.5);
+      width: 300px;
+      transition: transform 0.3s, background 0.3s;
+    }
+    .category:hover {
+      transform: translateY(-10px);
+      background: #333333;
+    }
+    @keyframes fadeIn {
+      0% {opacity: 0; transform: translateY(-20px);}
+      100% {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+  <script>
+    let cart = [];
+    function addToCart(item) {
+      cart.push(item);
+      updateCart();
+    }
+    function updateCart() {
+      const cartList = document.getElementById("cart-items");
+      cartList.innerHTML = "";
+      cart.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        cartList.appendChild(li);
+      });
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>NutriPill</h1>
+    <p>Your Personalized Nutrition in One Simple Pill</p>
+  </header>
+
+  <section>
+    <h2>What is NutriPill?</h2>
+    <p>Nutripill is a comprehensive dietary supplement capsule formulated with essential vitamins, minerals, and herbal extracts to support overall health, boost energy, and fill nutritional gaps. It is suitable for various age groups with tailored formulations—adults can use it for daily wellness and immunity; elderly individuals benefit from its support for bones, joints, and cognitive health; pregnant women may use specially formulated prenatal versions rich in folic acid and iron (only under medical guidance); and children can take age-appropriate versions to aid growth and strengthen immunity. Nutripill provides a convenient way to maintain balanced nutrition across all life stages.
+    </p>
+  </section>
+
+  <section>
+    <h2>Product Categories</h2>
+    <div class="category-section">
+      <div class="category">
+        <h3>👶 Pregnant Women</h3>
+        <img src="https://via.placeholder.com/300x200?text=Pregnancy+NutriPill" alt="Pregnancy NutriPill">
+        <p>Includes folic acid, iron, DHA and more to support prenatal health.</p>
+        <p><strong>Price:</strong> ₹599</p>
+        <button class="buy-button" onclick="addToCart('NutriPill - Pregnancy ₹599')">Buy</button>
+      </div>
+      <div class="category">
+        <h3>👵 Seniors</h3>
+        <img src="https://via.placeholder.com/300x200?text=Seniors+NutriPill" alt="Seniors NutriPill">
+        <p>Boosted with Vitamin D, calcium, and joint care support for elderly wellness.</p>
+        <p><strong>Price:</strong> ₹499</p>
+        <button class="buy-button" onclick="addToCart('NutriPill - Seniors ₹499')">Buy</button>
+      </div>
+      <div class="category">
+        <h3>👶 Children</h3>
+        <img src="https://via.placeholder.com/300x200?text=Children+NutriPill" alt="Children NutriPill">
+        <p>Contains Omega-3, magnesium, and brain boosters for focus and memory.</p>
+        <p><strong>Price:</strong> ₹549</p>
+        <button class="buy-button" onclick="addToCart('NutriPill - Children ₹549')">Buy</button>
+      </div>
+      <div class="category">
+        <h3>💪 Fitness Enthusiasts</h3>
+        <img src="https://via.placeholder.com/300x200?text=Fitness+NutriPill" alt="Fitness NutriPill">
+        <p>BCAAs, protein blend, and recovery minerals for your active lifestyle.</p>
+        <p><strong>Price:</strong> ₹599</p>
+        <button class="buy-button" onclick="addToCart('NutriPill - Fitness ₹599')">Buy</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Product Gallery</h2>
+    <p style="max-width: 800px; margin: 0 auto 30px; font-size: 16px; color: #ccc;">
+      Take a closer look at NutriPill – the future of smart nutrition. Whether you're on-the-go, at work, or at home, NutriPill fits into your lifestyle effortlessly. 
+      Every pill is crafted with care, stored in premium bottles, and designed for rapid absorption with maximum nutritional value.
+      Explore our product visuals below and discover the quality inside every NutriPill capsule.
+    </p>
+    <div class="pill-images">
+      <div>
+        <img src="https://sdmntpreastus2.oaiusercontent.com/files/00000000-5224-61f6-9627-ec052ebdb684/raw?se=2025-04-22T18%3A14%3A44Z&sp=r&sv=2024-08-04&sr=b&scid=a22e996d-1f33-5939-aaf1-380f2a49171a&skoid=2f36945c-3adc-4614-ac2b-eced8f672c58&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-22T04%3A35%3A54Z&ske=2025-04-23T04%3A35%3A54Z&sks=b&skv=2024-08-04&sig=emT/58qKiWaA9Zwg3mp%2BMhpwuG%2BuHUza4E6nZ0tEpmo%3D" alt="NutriPill Capsules">
+        <p><strong>NutriPill Bottle:</strong> Our sleek and durable container is designed to keep your supplements protected, fresh, and easy to carry – perfect for busy routines.</p>
+      </div>
+      <div>
+        <img src="https://sdmntpreastus2.oaiusercontent.com/files/00000000-87e0-61f6-bb2c-c9ed6aada133/raw?se=2025-04-22T18%3A02%3A44Z&sp=r&sv=2024-08-04&sr=b&scid=3e50125e-1445-592e-bed9-bcc081c2b468&skoid=2f36945c-3adc-4614-ac2b-eced8f672c58&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-22T04%3A40%3A22Z&ske=2025-04-23T04%3A40%3A22Z&sks=b&skv=2024-08-04&sig=bDO1UCJxZUQ0hWZwWyG80pWpN5F99kfNdwhMJ5UU0bM%3D" alt="NutriPill Bottle">
+        <p><strong>NutriPill Capsules:</strong> Scientifically formulated, each capsule contains essential nutrients tailored for specific health goals, ensuring efficient delivery to your body.</p>
+      </div>
+      <div>
+        <img src="https://sdmntpreastus2.oaiusercontent.com/files/00000000-2ce8-61f6-9532-ff1130a8b8bb/raw?se=2025-04-22T18%3A17%3A49Z&sp=r&sv=2024-08-04&sr=b&scid=350d926d-93e8-5569-a3bc-07b65edba851&skoid=2f36945c-3adc-4614-ac2b-eced8f672c58&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-22T04%3A45%3A24Z&ske=2025-04-23T04%3A45%3A24Z&sks=b&skv=2024-08-04&sig=qbRSj7qN72WuPJBB/Dkk3JYxWrIfQjtM/v0fBj999cU%3D" alt="NutriPill Close-up">
+        <p><strong>NutriPill Close-up:</strong> Precision-manufactured and quality-checked capsules with a smooth coating for easy swallowing and superior nutrient retention.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cart-section">
+    <h2>Shopping Cart</h2>
+    <ul id="cart-items" class="cart-items"></ul>
+    <button class="cart-button" onclick="alert('Thank you for your purchase!')">Checkout</button>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 NutriPill Inc. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+
